@@ -1,9 +1,32 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Library</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
-</ion-content>
+    <ion-toolbar>
+      <ion-title><h2>Library</h2></ion-title>
+      <ion-button float-right>Upload</ion-button>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-card class="container">
+      <ion-card-content>
+     <!-- <div  *ngFor="let i of vocabulary | async"  class="flip-card">-->
+       <div class="flip-card">
+          <div class="flip-card-inner">
+            <div  class="flip-card-front" >
+                <h1 class="ion-justify-content-center, ion-align-items-center"><!--{{(i)?.word}}-->Audioclip name</h1>
+                <h2 class="ion-justify-content-center, ion-align-items-center">.WAV</h2>
+            </div>
+            <div class="flip-card-back">
+                <h2>Clip name</h2>
+                <h3>Your clip description</h3>
+                <ion-button>Download</ion-button>
+              <!--
+              <h2>{{(i)?.word}}</h2>
+              <h3>{{(i)?.definition}}</h3>
+              -->
+            </div>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+  
