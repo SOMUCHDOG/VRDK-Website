@@ -2,6 +2,7 @@
 # http://git-scm.com/docs/gitignore
 
 *~
+/api-keys.ts
 *.sw[mnpcod]
 .tmp
 *.tmp
@@ -16,7 +17,7 @@ $RECYCLE.BIN/
 *.log
 log.txt
 npm-debug.log*
-/.api-keys.ts
+/api-keys
 /.idea
 /.ionic
 /.sass-cache

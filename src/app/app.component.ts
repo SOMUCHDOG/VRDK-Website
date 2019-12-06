@@ -1,9 +1,9 @@
+import { FileHandle } from './upload/dragDrop.directive';
 import { Component } from '@angular/core';
 
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { FileHandle } from './upload/dragDrop.directive'
 
 @Component({
   selector: 'app-root',
@@ -12,6 +12,17 @@ import { FileHandle } from './upload/dragDrop.directive'
 })
 export class AppComponent {
   
+  // name = 'Angular 5';
+  // files: FileHandle[] = [];
+
+  // filesDropped(files: FileHandle[]): void {
+  //   this.files = files;
+  // }
+
+  // upload(): void {
+  //   //get image upload file obj;
+  // }
+
   public appPages = [
     {
       title: 'Home',

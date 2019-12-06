@@ -1,27 +1,14 @@
-import { FileDropDirective } from './../file-drop.directive';
-import { Component } from '@angular/core';
 import { UploadService } from './../upload.service';
+import { Component } from '@angular/core';
 import { Upload } from './../upload';
 import * as _ from "lodash";
 
 @Component({
-  selector: 'app-upload',
-  templateUrl: './upload.page.html',
-  styleUrls: ['./upload.page.scss'],
+  selector: 'upload-form',
+  templateUrl: './upload-form.component.html',
+  styleUrls: ['./upload-form.component.scss'],
 })
-export class UploadPage {
-
-    name = 'Angular 5';
-    files: FileDropDirective[] = [];
-  
-    filesDropped(files: FileDropDirective[]): void {
-      this.files = files;
-    }
-
-    upload(): void {
-      //get image upload file obj;
-    }
-    
+export class UploadFormComponent {
 
   currentUpload: Upload;
   dropzoneActive: boolean = false;
@@ -42,4 +29,3 @@ export class UploadPage {
       )
   }
 }
-
