@@ -23,11 +23,11 @@ export class FileDropDirective {
   @HostListener('dragover', ['$event'])
     onDragOver($event){
       event.preventDefault();
-
+      console.log("FILES ARE HOVERING");
       this.filesHovered.emit(true);
     }
   
-  @HostListener('drageleave', ['$event'])
+  @HostListener('dragleave', ['$event'])
     onDragLeave($event) {
       this.filesHovered.emit(false);
      }

@@ -1,4 +1,3 @@
-import { FileHandle } from './upload/dragDrop.directive';
 import { Component } from '@angular/core';
 
 import { Platform } from '@ionic/angular';
@@ -11,17 +10,6 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
-  
-  // name = 'Angular 5';
-  // files: FileHandle[] = [];
-
-  // filesDropped(files: FileHandle[]): void {
-  //   this.files = files;
-  // }
-
-  // upload(): void {
-  //   //get image upload file obj;
-  // }
 
   public appPages = [
     {
@@ -29,11 +17,11 @@ export class AppComponent {
       url: '/home',
       icon: 'home'
     },
-    {
-      title: 'List',
-      url: '/list',
-      icon: 'list'
-    },
+    // {
+    //   title: 'List',
+    //   url: '/list',
+    //   icon: 'list'
+    // },
     {
       title: 'Library',
       url: '/library',

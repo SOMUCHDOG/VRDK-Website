@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { UploadFormComponent } from './upload-form.component';
+import { MultiFileUploadComponent } from './multi-file-upload.component';
 
-describe('UploadFormComponent', () => {
-  let component: UploadFormComponent;
-  let fixture: ComponentFixture<UploadFormComponent>;
+describe('MultiFileUploadComponent', () => {
+  let component: MultiFileUploadComponent;
+  let fixture: ComponentFixture<MultiFileUploadComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UploadFormComponent ],
+      declarations: [ MultiFileUploadComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(UploadFormComponent);
+    fixture = TestBed.createComponent(MultiFileUploadComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

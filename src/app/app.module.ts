@@ -12,15 +12,11 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 
-//my shit
-import { DragDirective } from './upload/dragDrop.directive';
-import { HelloComponent } from './upload/hello.component';
-import { FileDropDirective } from './file-drop.directive';
 import { masterFirebaseConfig } from './api-keys';
 
 
 @NgModule({
-  declarations: [AppComponent, DragDirective, HelloComponent, FileDropDirective],
+  declarations: [AppComponent],
   entryComponents: [],
   imports: [
     AngularFireModule.initializeApp(masterFirebaseConfig),
