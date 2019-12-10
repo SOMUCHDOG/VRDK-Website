@@ -11,13 +11,12 @@ export class MultiFileUploadComponent {
   public uploader: FileUploader = new FileUploader({});
   public hasBaseDropZoneOver: boolean = false;
 
-  constructor() { 
-
-  }
+  constructor() {}
 
   getFiles(): FileLikeObject[] {
     return this.uploader.queue.map((fileItem) => {
       return fileItem.file;
+      //console.log("fileItem.file:",fileItem.file);
     });
   }
 

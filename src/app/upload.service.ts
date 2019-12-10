@@ -1,6 +1,8 @@
-import { Injectable } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Injectable, ViewChild } from '@angular/core';
 import { Upload } from './upload';
 import { AngularFireDatabase } from 'angularfire2/database';
+
 import * as firebase from 'firebase';
 
 @Injectable({
@@ -11,9 +13,16 @@ export class UploadService {
 
   constructor(private db: AngularFireDatabase){ }
 
-  pushUpload(upload: Upload) { 
+  pushUpload(upload: Upload, idx) { 
+
+    console.log("pushingUpload:", upload);
+
+    console.log("idx:", idx);
     let storageRef = firebase.storage().ref();
-    let uploadTask = storageRef.child('uploads/${upload.file.name}').put(upload.file);
+    console.log("StorageRef:",storageRef);
+
+    let uploadTask = storageRef.child('uploads/'+ upload.file.name).put(upload.file);
+    console.log(uploadTask);
 
     uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
     (snapshot) => {
@@ -22,6 +31,7 @@ export class UploadService {
     },
     (error) => {
       //upload failed :(
+        console.log("sent file was: ", upload);
         console.log(error)
     },
     () => {
@@ -36,7 +46,8 @@ export class UploadService {
   
   //Writes the file details to the realtime db
   private saveFileData(upload: Upload) {
-    this.db.list('uploads').push(upload);
+    this.db.list('uploads').push(upload.file);
+    console.log("got: ", upload);
 
   }
 }

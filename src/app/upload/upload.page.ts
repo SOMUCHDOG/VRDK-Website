@@ -21,17 +21,20 @@ export class UploadPage {
     // }
 
     upload(): void {
-       //get image upload file obj;
-       console.log("upload files");
+       //get upload file obj;
+       console.log("upload()");
        let files = this.fileField.getFiles();
-       console.log(files);
+       //console.log(files[0].rawFile);
    
        let formData = new FormData();
        formData.append('somekey', 'some value') // Add any other data you want to send
    
        files.forEach((file) => {
          formData.append('files[]', file.rawFile, file.name);
+         files = (files);
+         
        });
+       this.handleDrop(files);
     }
     
 
@@ -42,17 +45,23 @@ export class UploadPage {
 
   dropzoneState($event: boolean) {
     this.dropzoneActive = $event;
-    console.log("please");
+    //console.log("please");
   }
 
   handleDrop(fileList) {
+    console.log("fileList:",fileList);
 
     let filesIndex = _.range(fileList.length)
+    console.log("filesIndex:", filesIndex);
 
     _.each(filesIndex, (idx) => {
-      this.currentUpload = new Upload(fileList[idx]);
-      this.upSvc.pushUpload(this.currentUpload)}
+      //console.log("fileList[idx]:", fileList[idx])
+      this.currentUpload = new Upload(fileList[idx].rawFile);
+      //console.log(this.currentUpload);
+      this.upSvc.pushUpload(this.currentUpload, filesIndex[idx])}
       )
+      
+      // console.log(this.currentUpload);
   }
 }
 
